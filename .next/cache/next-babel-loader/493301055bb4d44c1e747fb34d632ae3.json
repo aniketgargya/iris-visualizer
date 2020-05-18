@@ -1,0 +1,1 @@
+{"ast":null,"code":"import App from 'next/app';\nimport '../styles/main.css';\nexport default App;","map":null,"metadata":{},"sourceType":"module"}
