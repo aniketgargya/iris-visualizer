@@ -1,7 +1,9 @@
 import { useState, useCallback, useMemo, FC } from "react";
 import { Scatter, ChartData } from "react-chartjs-2";
 import shuffle from 'shuffle-array';
-
+import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/theme-github";
 
 import { ChoiceButtons, CustomButton, Choice } from "../components/";
 import { trainData, testData as TestData, color, label, Species, IrisProperty, IrisFlower } from "../data/";
@@ -9,7 +11,7 @@ import { trainData, testData as TestData, color, label, Species, IrisProperty, I
 const Index: FC<{}> = () => {
     const [xAxisProperty, setXAxisProperty] = useState<IrisProperty>("sepal_width");
     const [yAxisProperty, setYAxisProperty] = useState<IrisProperty>("sepal_length");
-    const [answersHidden, setAnswersHidden] = useState<boolean>(false);
+    const [answersHidden, setAnswersHidden] = useState<boolean>(true);
 
     const testData: IrisFlower[] = useMemo(() => shuffle(TestData), []);
 
@@ -97,7 +99,7 @@ const Index: FC<{}> = () => {
                                     <tr key={i} className={`${i % 2 == 0 && "bg-gray-100"}`}>
                                         <td className="border px-4 py-2">{irisFlower[xAxisProperty]}</td>
                                         <td className="border px-4 py-2">{irisFlower[yAxisProperty]}</td>
-                                        <td className={`border px-4 py-2 ${answersHidden || "opacity-0"}`}>{irisFlower["species"]}</td>
+                                        <td className={`border px-4 py-2 ${answersHidden && "opacity-0"}`}>{irisFlower["species"]}</td>
                                     </tr>
                                 ))
                             }
