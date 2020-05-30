@@ -1,9 +1,6 @@
 import { useState, useCallback, useMemo, FC } from "react";
 import { Scatter, ChartData } from "react-chartjs-2";
 import shuffle from 'shuffle-array';
-import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/mode-javascript";
-import "ace-builds/src-noconflict/theme-github";
 
 import { ChoiceButtons, CustomButton, Choice } from "../components/";
 import { trainData, testData as TestData, color, label, Species, IrisProperty, IrisFlower } from "../data/";

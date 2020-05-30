@@ -12,11 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ace-builds": "^1.4.11",
     "chart.js": "^2.9.3",
     "next": "^9.4.1",
     "react": "^16.13.1",
-    "react-ace": "^9.0.0",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.1",
     "shuffle-array": "^1.0.1"
