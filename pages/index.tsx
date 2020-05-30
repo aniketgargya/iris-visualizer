@@ -82,7 +82,7 @@ const Index: FC<{}> = () => {
                     className="mb-6"
                     onClick={() => { setAnswersHidden(current => !current) }}
                 >
-                    {`${answersHidden ? "Show" : "Hide"} Answers`}
+                    {`${answersHidden ? "Hide" : "Show"} Answers`}
                 </CustomButton>
                 {
                     <table className="w-full border-solid border-black border-2 mb-6">
