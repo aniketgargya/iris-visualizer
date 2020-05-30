@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Dispatch, SetStateAction } from "react";
 import { CustomButton } from "./";
 
 interface Choice {
@@ -9,7 +9,7 @@ interface Choice {
 interface IProps {
     choices: Choice[];
     selectedId?: string;
-    setSelectedId: (id: string) => void;
+    setSelectedId: Dispatch<SetStateAction<any>>
 };
 
 const ChoiceButtons: FC<IProps> = ({ choices, selectedId, setSelectedId }) => {

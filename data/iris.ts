@@ -1,12 +1,15 @@
+type Species = "setosa" | "versicolor" | "virginica";
+type IrisProperty = "sepal_length" | "sepal_width" | "petal_length" | "petal_width";
+
 interface IrisFlower {
     sepal_length: number;
     sepal_width: number;
     petal_length: number;
     petal_width: number;
-    species: "setosa" | "versicolor" | "virginica";
+    species: Species;
 }
 
-const IrisFlowers: IrisFlower[] = [
+const trainData: IrisFlower[] = [
     {
         sepal_length: 5.1,
         sepal_width: 3.5,
@@ -333,27 +336,6 @@ const IrisFlowers: IrisFlower[] = [
         sepal_length: 5.1,
         sepal_width: 3.8,
         petal_length: 1.6,
-        petal_width: 0.2,
-        species: "setosa"
-    },
-    {
-        sepal_length: 4.6,
-        sepal_width: 3.2,
-        petal_length: 1.4,
-        petal_width: 0.2,
-        species: "setosa"
-    },
-    {
-        sepal_length: 5.3,
-        sepal_width: 3.7,
-        petal_length: 1.5,
-        petal_width: 0.2,
-        species: "setosa"
-    },
-    {
-        sepal_length: 5,
-        sepal_width: 3.3,
-        petal_length: 1.4,
         petal_width: 0.2,
         species: "setosa"
     },
@@ -687,27 +669,6 @@ const IrisFlowers: IrisFlower[] = [
         species: "versicolor"
     },
     {
-        sepal_length: 6.2,
-        sepal_width: 2.9,
-        petal_length: 4.3,
-        petal_width: 1.3,
-        species: "versicolor"
-    },
-    {
-        sepal_length: 5.1,
-        sepal_width: 2.5,
-        petal_length: 3,
-        petal_width: 1.1,
-        species: "versicolor"
-    },
-    {
-        sepal_length: 5.7,
-        sepal_width: 2.8,
-        petal_length: 4.1,
-        petal_width: 1.3,
-        species: "versicolor"
-    },
-    {
         sepal_length: 6.3,
         sepal_width: 3.3,
         petal_length: 6,
@@ -1035,6 +996,51 @@ const IrisFlowers: IrisFlower[] = [
         petal_length: 5,
         petal_width: 1.9,
         species: "virginica"
+    }
+];
+
+const testData: IrisFlower[] = [
+    {
+        sepal_length: 4.6,
+        sepal_width: 3.2,
+        petal_length: 1.4,
+        petal_width: 0.2,
+        species: "setosa"
+    },
+    {
+        sepal_length: 5.3,
+        sepal_width: 3.7,
+        petal_length: 1.5,
+        petal_width: 0.2,
+        species: "setosa"
+    },
+    {
+        sepal_length: 5,
+        sepal_width: 3.3,
+        petal_length: 1.4,
+        petal_width: 0.2,
+        species: "setosa"
+    },
+    {
+        sepal_length: 6.2,
+        sepal_width: 2.9,
+        petal_length: 4.3,
+        petal_width: 1.3,
+        species: "versicolor"
+    },
+    {
+        sepal_length: 5.1,
+        sepal_width: 2.5,
+        petal_length: 3,
+        petal_width: 1.1,
+        species: "versicolor"
+    },
+    {
+        sepal_length: 5.7,
+        sepal_width: 2.8,
+        petal_length: 4.1,
+        petal_width: 1.3,
+        species: "versicolor"
     },
     {
         sepal_length: 6.5,
@@ -1059,4 +1065,5 @@ const IrisFlowers: IrisFlower[] = [
     }
 ];
 
-export default IrisFlowers;
+export { trainData, testData };
+export type { Species, IrisProperty, IrisFlower };
