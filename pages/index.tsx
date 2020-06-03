@@ -2,7 +2,7 @@ import { useState, useCallback, useMemo, FC } from "react";
 import { Scatter, ChartData } from "react-chartjs-2";
 import shuffle from 'shuffle-array';
 
-import { ChoiceButtons, CustomButton, Choice } from "../components/";
+import { ChoiceButtons, CustomButton, Choice, AnswerTable, TensorflowSection } from "../components/";
 import { trainData, testData as TestData, color, label, Species, IrisProperty, IrisFlower } from "../data/";
 
 const Index: FC<{}> = () => {
@@ -59,12 +59,15 @@ const Index: FC<{}> = () => {
     ];
 
     return (
-        <main className="w-4/5 m-auto max-w-6xl">
-            <h1 className="text-6xl text-center">Iris Visualizer</h1>
-            <figure>
-                <img src="/petal-sepal.png" alt="" className="w-full" />
-                <figcaption>Image from <a href="https://thegoodpython.com/iris-dataset/" className="underline text-blue-500">The Good Python</a></figcaption>
-            </figure>
+        <main className="w-4/5 m-auto max-w-6xl py-8">
+            <header>
+                <h1 className="text-6xl text-center">Iris Visualizer</h1>
+                <figure>
+                    <img src="/petal-sepal.png" alt="" className="w-full" />
+                    <figcaption>Image from <a href="https://thegoodpython.com/iris-dataset/" className="underline text-blue-500">The Good Python</a></figcaption>
+                </figure>
+            </header>
+
             <section>
                 <Scatter data={data} />
                 <div className="mb-6">
@@ -79,31 +82,12 @@ const Index: FC<{}> = () => {
                     className="mb-6"
                     onClick={() => { setAnswersHidden(current => !current) }}
                 >
-                    {`${answersHidden ? "Hide" : "Show"} Answers`}
+                    {`${answersHidden ? "Show" : "Hide"} Answers`}
                 </CustomButton>
-                {
-                    <table className="w-full border-solid border-black border-2 mb-6">
-                        <thead>
-                            <tr>
-                                <td className="w-1/3 px-4 py-2">{label[xAxisProperty]}</td>
-                                <td className="w-1/3 px-4 py-2">{label[yAxisProperty]}</td>
-                                <td className="w-1/3 px-4 py-2">Species</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                testData.map((irisFlower, i) => (
-                                    <tr key={i} className={`${i % 2 == 0 && "bg-gray-100"}`}>
-                                        <td className="border px-4 py-2">{irisFlower[xAxisProperty]}</td>
-                                        <td className="border px-4 py-2">{irisFlower[yAxisProperty]}</td>
-                                        <td className={`border px-4 py-2 ${answersHidden && "opacity-0"}`}>{irisFlower["species"]}</td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                }
+                <AnswerTable label={label} testData={testData} xAxisProperty={xAxisProperty} yAxisProperty={yAxisProperty} answersHidden={answersHidden} />
             </section>
+
+            <TensorflowSection trainData={trainData} testData={testData} />
         </main>
     );
 };
