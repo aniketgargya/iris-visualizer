@@ -88,6 +88,7 @@ const TensorflowSection = ({ trainData, testData }) => {
                 }}
             />
             <CustomButton onClick={() => {
+                setLog('');
                 const tf = tensorflow;
                 const irisTrainData = trainData;
                 const irisTestData = testData;

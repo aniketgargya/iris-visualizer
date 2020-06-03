@@ -4,7 +4,7 @@
 
 Build with Tailwindcss, Next.js, Chart.js (React-Chartjs-2).
 
-A fun way to visualize the [Iris Dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set).
+A fun way to visualize the [Iris Dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set). After playing with the graph, you can also run some Tensorflow.js code right in your browser and view the output in the console below the editor.
 
 To run locally:
 - Download or clone the repository.
@@ -27,3 +27,5 @@ npm start
 [![Tailwindcss](/github-readme/tailwindcss.png)](https://tailwindcss.com/)
 
 [![Chart.js](/github-readme/chartjs.png)](https://www.chartjs.org/)
+
+[![Tensorflow.js](/github-readme/chartjs.png)](https://www.tensorflow.org/js)
