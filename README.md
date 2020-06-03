@@ -28,4 +28,4 @@ npm start
 
 [![Chart.js](/github-readme/chartjs.png)](https://www.chartjs.org/)
 
-[![Tensorflow.js](/github-readme/chartjs.png)](https://www.tensorflow.org/js)
+[![Tensorflow.js](/github-readme/tensorflowjs.png)](https://www.tensorflow.org/js)
